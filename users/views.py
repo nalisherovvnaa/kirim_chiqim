@@ -143,7 +143,7 @@ class VerifyCodeView(View):
     def post(self, request):
         address = request.session.get('reset_address')
         code_input = request.POST.get('code')
-        form_data = request.session.get('form_data')  # bu dict ko'rinishida
+        form_data = request.session.get('form_data')  # bu dict kornishida
 
         try:
             user = CustomUser.objects.get(address=address)

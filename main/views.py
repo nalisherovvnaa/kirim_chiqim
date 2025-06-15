@@ -11,7 +11,7 @@ from services import get_currency
 
 # Create your views here.
 
-class MainView(LoginRequiredMixin, View):  # Hammasi OK
+class MainView(LoginRequiredMixin, View):  
     login_url = 'users:login'
     next = 'main:main'
     
@@ -36,7 +36,7 @@ class MainView(LoginRequiredMixin, View):  # Hammasi OK
         return render(request, 'main/main.html', context)
 
 
-class TransactionsView(LoginRequiredMixin, View): # Hammasi OK 
+class TransactionsView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:transactions'
 
@@ -100,7 +100,7 @@ class TransactionsView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/transactions.html', context)
     
 
-class IncomeView(LoginRequiredMixin, View): # Hammasi OK
+class IncomeView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:income'
 
@@ -151,7 +151,7 @@ class IncomeView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/income.html', context)
 
 
-class ExpensesView(LoginRequiredMixin, View): # Hammasi OK
+class ExpensesView(LoginRequiredMixin, View):
     login_url = 'users:login'
     next = 'main:expenses'
 
@@ -203,7 +203,7 @@ class ExpensesView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/expenses.html', context)
     
 
-class NewAccountView(LoginRequiredMixin, View): # Hammasi OK
+class NewAccountView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:new_account'
 
@@ -221,7 +221,7 @@ class NewAccountView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/new_account.html', {'form': form})
 
 
-class NewIncomeView(LoginRequiredMixin, View): # Hammasi OK
+class NewIncomeView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:new_income'
 
@@ -239,7 +239,7 @@ class NewIncomeView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/new_income.html', {'form': form})
         
     
-class NewExpenseView(LoginRequiredMixin, View): # Hammasi OK
+class NewExpenseView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:new_expense'
 
@@ -257,7 +257,7 @@ class NewExpenseView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/new_expense.html', {'form': form})
     
 
-class UpdateAccountView(LoginRequiredMixin, View): # Hammasi OK
+class UpdateAccountView(LoginRequiredMixin, View):
     login_url = 'users:login'
     next = 'main:update_account'
 
@@ -275,7 +275,7 @@ class UpdateAccountView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main:update_account.html', {'form': form})
     
 
-class UpdateIncomeView(LoginRequiredMixin, View): # Hammasi OK
+class UpdateIncomeView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:update_income'
 
@@ -293,7 +293,7 @@ class UpdateIncomeView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main:update_income.html', {'form': form})
     
 
-class UpdateExpenseView(LoginRequiredMixin, View): # Hammasi OK
+class UpdateExpenseView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:update_expense'
 
@@ -311,7 +311,7 @@ class UpdateExpenseView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main:update_expense.html', {'form': form})
 
 
-class DeleteAccountView(LoginRequiredMixin, View): # Hammasi OK
+class DeleteAccountView(LoginRequiredMixin, View):
     login_url = 'users:login'
     next = 'main:delete_account'
 
@@ -325,7 +325,7 @@ class DeleteAccountView(LoginRequiredMixin, View): # Hammasi OK
         return redirect('main:transactions')
 
 
-class DeleteIncomeView(LoginRequiredMixin, View): # Hammasi OK
+class DeleteIncomeView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:delete_income'
 
@@ -339,7 +339,7 @@ class DeleteIncomeView(LoginRequiredMixin, View): # Hammasi OK
         return redirect('main:income')
 
 
-class DeleteExpenseView(LoginRequiredMixin, View): # Hammasi OK
+class DeleteExpenseView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:delete_expense'
 
@@ -353,7 +353,7 @@ class DeleteExpenseView(LoginRequiredMixin, View): # Hammasi OK
         return redirect('main:expenses')
 
 
-class CategoriesView(LoginRequiredMixin, View): # Hammasi OK
+class CategoriesView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:categories'
 
@@ -366,7 +366,7 @@ class CategoriesView(LoginRequiredMixin, View): # Hammasi OK
         })
 
 
-class NewIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class NewIncomeCategoryView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:new_income_category'
 
@@ -384,7 +384,7 @@ class NewIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/new_income_category.html', {'form': form})
     
 
-class NewExpenseCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class NewExpenseCategoryView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:new_expense_category'
 
@@ -402,7 +402,7 @@ class NewExpenseCategoryView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/new_expense_category.html', {'form': form})
     
 
-class UpdateIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class UpdateIncomeCategoryView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:update_income_category'
 
@@ -420,7 +420,7 @@ class UpdateIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/update_income_category.html', {'form': form})
 
 
-class UpdateExpenseCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class UpdateExpenseCategoryView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:update_expense_category'
 
@@ -438,7 +438,7 @@ class UpdateExpenseCategoryView(LoginRequiredMixin, View): # Hammasi OK
         return render(request, 'main/update_expense_category.html', {'form': form})
     
 
-class DeleteIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class DeleteIncomeCategoryView(LoginRequiredMixin, View): 
     login_url = 'users:login'
     next = 'main:delete_income_category'
 
@@ -452,7 +452,7 @@ class DeleteIncomeCategoryView(LoginRequiredMixin, View): # Hammasi OK
         return redirect('main:categories')
     
 
-class DeleteExpenseCategoryView(LoginRequiredMixin, View): # Hammasi OK
+class DeleteExpenseCategoryView(LoginRequiredMixin, View):
     login_url = 'users:login'
     next = 'main:delete_expense_category'
 

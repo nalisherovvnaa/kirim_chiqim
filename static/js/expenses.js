@@ -1,11 +1,11 @@
-// Demo chiqim ma'lumotlari
+// Demo chiqim 
 let expenses = [
     { id: 1, date: '2023-06-15', category: 'food', description: 'Grocery shopping', amount: 85.75 },
     { id: 2, date: '2023-06-12', category: 'utilities', description: 'Electric bill', amount: 65.20 },
     { id: 3, date: '2023-06-10', category: 'transport', description: 'Fuel', amount: 40.00 }
 ];
 
-// Byudjet ma'lumotlari
+// Byudjet 
 const monthlyBudget = 2000;
 let budgetSpent = expenses.reduce((sum, exp) => sum + exp.amount, 0);
 
@@ -21,7 +21,7 @@ const budgetProgressElement = document.getElementById('budgetProgress');
 const budgetPercentageElement = document.getElementById('budgetPercentage');
 let expenseChart;
 
-// Chiqimlar ro'yxatini yangilash
+// Chiqimlar royxatini yengilsh
 function updateExpenseList() {
     expenseTable.innerHTML = '';
     
@@ -48,12 +48,12 @@ function updateExpenseList() {
         expenseTable.appendChild(row);
     });
     
-    // Statistikani yangilash
+    // Statistikani yengilsh
     updateExpenseStats();
     updateBudgetInfo();
     updateExpenseChart();
     
-    // Tugmalarga event listener qo'shish
+    // Tugmalarga event listener qoshish
     document.querySelectorAll('.edit-expense-btn').forEach(btn => {
         btn.addEventListener('click', () => editExpense(btn.dataset.id));
     });
@@ -63,7 +63,7 @@ function updateExpenseList() {
     });
 }
 
-// Chiqim statistikasini yangilash
+// Chiqim statistikasini yengilsh
 function updateExpenseStats() {
     // Jami chiqim
     const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
@@ -88,7 +88,7 @@ function updateExpenseStats() {
     }
 }
 
-// Byudjet ma'lumotlarini yangilash
+// Byudjet malumotlarini yengilsh
 function updateBudgetInfo() {
     const currentMonth = new Date().getMonth();
     budgetSpent = expenses
@@ -139,7 +139,7 @@ function updateBudgetInfo() {
 function updateExpenseChart() {
     const ctx = document.getElementById('expenseCategoryChart').getContext('2d');
     
-    // Toifalar bo'yicha guruhlash
+    // Toifalar boyicha guruhlash
     const categories = {};
     expenses.forEach(expense => {
         categories[expense.category] = (categories[expense.category] || 0) + expense.amount;

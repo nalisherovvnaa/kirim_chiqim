@@ -17,7 +17,7 @@ from django.utils import timezone
 
 # Create your views here.
 
-class MainView(APIView):  # Hammasi OK
+class MainView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -42,7 +42,7 @@ class MainView(APIView):  # Hammasi OK
             }, status.HTTP_200_OK)
 
 
-class TransactionsView(APIView): # Hammasi OK 
+class TransactionsView(APIView):  
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -105,7 +105,7 @@ class TransactionsView(APIView): # Hammasi OK
                 }, status.HTTP_400_BAD_REQUEST)
 
 
-class IncomeView(APIView): # Hammasi OK 
+class IncomeView(APIView):  
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -159,7 +159,7 @@ class IncomeView(APIView): # Hammasi OK
             }, status.HTTP_200_OK)
 
 
-class ExpensesView(APIView): # Hammasi OK 
+class ExpensesView(APIView):  
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -215,7 +215,7 @@ class ExpensesView(APIView): # Hammasi OK
             }, status.HTTP_200_OK)
     
 
-class NewAccountView(APIView): # Hammasi OK 
+class NewAccountView(APIView):  
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
     
@@ -228,7 +228,7 @@ class NewAccountView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 
-class NewIncomeView(APIView): # Hammasi OK 
+class NewIncomeView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
     
@@ -241,7 +241,7 @@ class NewIncomeView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
         
     
-class NewExpenseView(APIView): # Hammasi OK 
+class NewExpenseView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -254,7 +254,7 @@ class NewExpenseView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
     
 
-class UpdateAccountView(APIView): # Hammasi OK 
+class UpdateAccountView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -277,7 +277,7 @@ class UpdateAccountView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
     
 
-class UpdateIncomeView(APIView): # Hammasi OK 
+class UpdateIncomeView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -300,7 +300,7 @@ class UpdateIncomeView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 
-class UpdateExpenseView(APIView): # Hammasi OK 
+class UpdateExpenseView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -323,7 +323,7 @@ class UpdateExpenseView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 
-class DeleteAccountView(APIView): # Hammasi OK 
+class DeleteAccountView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -333,7 +333,7 @@ class DeleteAccountView(APIView): # Hammasi OK
         return Response({'data': None, 'message': 'Account deleted!'}, status.HTTP_200_OK)
 
 
-class DeleteIncomeView(APIView): # Hammasi OK 
+class DeleteIncomeView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -343,7 +343,7 @@ class DeleteIncomeView(APIView): # Hammasi OK
         return Response({'data': None, 'message': 'Income deleted!'}, status.HTTP_200_OK)
 
 
-class DeleteExpenseView(APIView): # Hammasi OK 
+class DeleteExpenseView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -353,7 +353,7 @@ class DeleteExpenseView(APIView): # Hammasi OK
         return Response({'data': None, 'message': 'Expense deleted!'}, status.HTTP_200_OK)
 
 
-class CategoriesView(APIView): # Hammasi OK 
+class CategoriesView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -368,7 +368,7 @@ class CategoriesView(APIView): # Hammasi OK
             }, status.HTTP_200_OK)
 
 
-class NewIncomeCategoryView(APIView): # Hammasi OK 
+class NewIncomeCategoryView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -381,7 +381,7 @@ class NewIncomeCategoryView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 
-class NewExpenseCategoryView(APIView): # Hammasi OK 
+class NewExpenseCategoryView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -394,7 +394,7 @@ class NewExpenseCategoryView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
     
 
-class UpdateIncomeCategoryView(APIView): # Hammasi OK 
+class UpdateIncomeCategoryView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -417,7 +417,7 @@ class UpdateIncomeCategoryView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 
-class UpdateExpenseCategoryView(APIView): # Hammasi OK 
+class UpdateExpenseCategoryView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 
@@ -440,7 +440,7 @@ class UpdateExpenseCategoryView(APIView): # Hammasi OK
         return Response({'error': serializer.errors}, status.HTTP_400_BAD_REQUEST)
     
 
-class DeleteIncomeCategoryView(APIView): # Hammasi OK 
+class DeleteIncomeCategoryView(APIView):
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
     
@@ -450,7 +450,7 @@ class DeleteIncomeCategoryView(APIView): # Hammasi OK
         return Response({'data': None, 'message': 'Income deleted!'}, status.HTTP_200_OK)
     
 
-class DeleteExpenseCategoryView(APIView): # Hammasi OK 
+class DeleteExpenseCategoryView(APIView): 
     permission_classes = IsAuthenticated,
     authentication_classes = TokenAuthentication,
 

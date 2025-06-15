@@ -19,20 +19,12 @@ from django.core.mail import EmailMessage, get_connection
 
 
 def validate_password(password):
-    """Parol validatsiyadan o'tsa True qaytaradi"""
     return 8 <= len(password) <= 128 and any(map(lambda x:x.isupper(), password)) and any(map(lambda x:x.islower(), password)) and ' ' not in password
 
 # Create your views here.
 
 class RegisterView(APIView):
     def post(self, request):
-        """
-        Shu yerda foydalanuvchiga code yuboriladi, key va code ni datada yuborishdan maqsad
-        bu funksiyaning ishlashini tekshirishni qulay qilish uchun. 
-        `VerifyCodeView` classi ham shu ikkala o'zgaruvchini qabul qiladi,
-        frontga yuboriladigan key orqali code to'g'ri ekanligini tekshiradi.
-        """
-
         serializer = CustomUserSerializer(data=request.data)
         data = request.data
         confirm_password = data.get('confirm_password', '')
@@ -96,7 +88,6 @@ class VerifyCodeView(APIView):
         code = data.get('code', '')
         key = data.get('key', '')
         try:
-            # Bu faqat parolni unutib yangi parol o'rnatayotganda ishladigan qism!
             data['set_new_password']
             if not code or not key:
                 return Response({'error': 'Code and key are required!'}, status=status.HTTP_400_BAD_REQUEST)
@@ -202,69 +193,6 @@ class ProfileView(APIView):
             return Response({'user_data': user.format}, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-
-# Pastda serializerdan foydalanmasdan update qilish kodi ham yozilgan 
-
-        # data = request.data
-        # try:
-        #     first_name = data["first_name"]
-        #     last_name = data["last_name"]
-        #     username = data["username"]
-        #     address = data["address"]
-        #     currency = data['currency']
-        # except Exception as e:
-        #     return Response({
-        #         'error': str(e),
-        #         'message': 'Invalid data'
-        #     }, status=status.HTTP_400_BAD_REQUEST)
-        
-        # avatar = request.FILES.get('avatar')
-
-        # # Address validatsiyasi (telefon yoki email bo‘lishi kerak)
-        # if not is_valid_phone(address) and not is_valid_email(address):
-        #     return Response({'message': 'Invalid address'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # # Avatarni validatsiya qilish
-        # if isinstance(avatar, str):
-        #     return Response({'message': 'Avatar fayl sifatida yuborilishi kerak (multipart/form-data).'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # try:
-        #     img = Image.open(avatar)
-        #     img.verify()
-        #     avatar.seek(0)
-        # except UnidentifiedImageError:
-        #     return Response({'message': 'Yuborilgan fayl rasm emas'}, status=status.HTTP_400_BAD_REQUEST)
-        # except Exception as e:
-        #     return Response({'message': f'Rasmni tekshirishda xatolik: {str(e)}'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # # Address va username unikalmi
-        # try:
-        #     custom_user = CustomUser.objects.get(address=address)
-        #     if user != custom_user:
-        #         return Response({'message': 'This address is already exist.'}, status=status.HTTP_400_BAD_REQUEST)
-
-        #     custom_user = CustomUser.objects.get(username=username)
-        #     if user != custom_user:
-        #         return Response({'message': 'This username is already exist.'}, status=status.HTTP_400_BAD_REQUEST)
-        # except CustomUser.DoesNotExist:
-        #     pass  # bunday user yo‘q, davom etamiz
-
-        # # Currencyni tekshirish
-        # if currency not in CurrencyChoices.values:
-        #     return Response({
-        #         'message': f"Yaroqsiz valyuta tanlandi. Ruxsat etilgan qiymatlar: {', '.join(CurrencyChoices.values)}"
-        #     }, status=status.HTTP_400_BAD_REQUEST)
-
-        # user.first_name = first_name
-        # user.last_name = last_name
-        # user.username = username
-        # user.address = address
-        # user.avatar = avatar
-        # user.currency = currency
-        # user.save()
-
-        # return Response({'user_data': user.format}, status=status.HTTP_200_OK) status=status.HTTP_200_OK)
 
     def patch(self, request):
         user = request.user
@@ -317,9 +245,7 @@ class ResetPasswordRequestView(APIView):
     def post(self, request):
         data = request.data
         address = data.get('address')
-        """
-        `VerfyCodeView` qachon 'set_new_password' o'zgaruvchisini olsagina keyin reset_password uchun ishlaydi.
-        """
+ 
         try:
             user = CustomUser.objects.get(address=address)
         except CustomUser.DoesNotExist:
@@ -329,13 +255,6 @@ class ResetPasswordRequestView(APIView):
         key = code[:3] + str(uuid.uuid4()) + code[3:]
         otp = OTP.objects.create(address=address, key=key)
         send_code(code, address)
-
-        """
-        Shu yerda foydalanuvchiga code yuboriladi, key va code ni datada yuborishdan maqsad
-        bu funksiyaning ishlashini tekshirishni qulay qilish uchun. 
-        `VerifyCodeView` classi ham shu ikkala o'zgaruvchini qabul qiladi,
-        frontga yuboriladigan key orqali code to'g'ri ekanligini tekshiradi.
-        """
 
         return Response({
                     'code': code,
@@ -351,9 +270,7 @@ class SetNewPasswordView(APIView):
         confirm_password = data.get('confirm_password', '')
         key = data.get('key')
         otp = OTP.objects.filter(key=key, is_used=True).last()
-        """
-        `VerfyCodeView` qachon 'set_new_password' o'zgaruvchisini olsagina keyin reset_password uchun ishlaydi.
-        """
+
         if not password or not confirm_password:
             return Response({'error': 'Password and confirm_password are required!'}, status.HTTP_400_BAD_REQUEST)
 
@@ -383,7 +300,7 @@ import ssl
 def send_code(code, to_email):
     subject = 'Tasdiqlash kodi'
     message = f'Sizning tasdiqlash kodingiz: {code}'
-    from_email = 'nalisherovvna@gmail.com'  # To‘g‘ri email manzil
+    from_email = 'nalisherovvna@gmail.com' 
 
     # SSL context SSL tekshiruvlarsiz
     ssl_context = ssl.create_default_context()
@@ -391,15 +308,14 @@ def send_code(code, to_email):
     ssl_context.verify_mode = ssl.CERT_NONE
 
     connection = get_connection(
-        host='smtp.yourserver.com',  # SMTP serveringiz (masalan: smtp.gmail.com)
-        port=587,  # TLS uchun port
-        username='your_username',  # SMTP login (odatda email manzilingiz)
-        password='your_password',  # SMTP parol
+        host='smtp.yourserver.com', 
+        port=587,  
+        username='your_username',  
+        password='your_password',
         use_tls=True,
         fail_silently=False,
     )
 
-    # Agar kerak bo'lsa, connection yaratishda ssl_context sozlashingiz uchun maxsus backend kerak bo'ladi (Django'da default get_connection ssl_contextni to‘g‘ridan-to‘g‘ri qabul qilmaydi).
-    # Bu yerda oddiy variant ishlatyapmiz:
+
     email = EmailMessage(subject, message, from_email, [to_email], connection=connection)
     email.send()
