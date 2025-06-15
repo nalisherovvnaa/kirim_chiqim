@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete Expense" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-trash-alt"></i>
+            <span>{% trans "Delete Expense" %}</span>
+        </h1>
+
+        <p>{% trans "Are you sure you want to delete this expense?" %}</p>
+        <div class="form-group">
+            <strong>{% trans "Category:" %} </strong>{{ expense.category }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Account Type:" %} </strong>{{ expense.account_type }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Amount:" %} </strong>{{ expense.amount }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Date:" %} </strong>{{ expense.date }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Description:" %} </strong>{{ expense.description }}
+        </div>
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-block">
+                {% trans "Yes, Delete" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p><a href="{% url 'main:expenses' %}">{% trans "Cancel" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

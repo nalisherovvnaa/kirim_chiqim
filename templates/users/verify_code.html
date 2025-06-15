@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Enter Verification Code" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-key"></i>
+            <span>{% trans "Enter Verification Code" %}</span>
+        </h1>
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    <strong>{% trans "Error" %}:</strong> {{ error }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="code" class="form-label">{% trans "Verification Code" %}</label>
+                <input type="text" id="code" name="code" class="form-control" required placeholder="{% trans 'Enter the code sent to your email' %}">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Submit" %}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

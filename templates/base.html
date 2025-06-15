@@ -1,0 +1,206 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBalans | {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 6px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a.active,
+        .nav-links a:hover {
+            background-color: #e1e5ea;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .user-profile {
+            position: relative;
+        }
+        .user-avatar img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .user-dropdown {
+            position: absolute;
+            right: 0;
+            top: 45px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            z-index: 1000;
+        }
+        .user-profile:hover .user-dropdown {
+            display: flex;
+        }
+        .user-dropdown a,
+        .user-dropdown form button {
+            padding: 10px 15px;
+            color: #333;
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+        }
+        .user-dropdown a:hover,
+        .user-dropdown form button:hover {
+            background-color: #f0f0f0;
+        }
+        .language-toggle,
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .language-flag {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="{% url 'main:main' %}" class="logo">
+                <i class="fas fa-wallet"></i>
+                <span>{% trans "MyBalans" %}</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="{% url 'main:main' %}" class="{% if request.resolver_match.url_name == 'main' %}active{% endif %}">
+                    <i class="fas fa-home"></i> {% trans "Home" %}
+                </a>
+                <a href="{% url 'main:transactions' %}" class="{% if request.resolver_match.url_name == 'transactions' %}active{% endif %}">
+                    <i class="fas fa-exchange-alt"></i> {% trans "Transactions" %}
+                </a>
+                <a href="{% url 'main:income' %}" class="{% if request.resolver_match.url_name == 'income' %}active{% endif %}">
+                    <i class="fas fa-wallet"></i> {% trans "Income" %}
+                </a>
+                <a href="{% url 'main:expenses' %}" class="{% if request.resolver_match.url_name == 'expenses' %}active{% endif %}">
+                    <i class="fas fa-money-bill-wave"></i> {% trans "Expense" %}
+                </a>
+                <a href="{% url 'main:categories' %}" class="{% if request.resolver_match.url_name == 'categories' %}active{% endif %}">
+                    <i class="fas fa-list"></i> {% trans "Categories" %}
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-profile">
+                    <button type="button" class="language-toggle">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="user-dropdown">
+                        <form method="post" action="{% url 'set_language' %}">{% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" name="language" value="en">
+                                <img src="https://flagcdn.com/w20/gb.png" class="language-flag"> English
+                            </button>
+                        </form>
+                        <form method="post" action="{% url 'set_language' %}">{% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" name="language" value="uz">
+                                <img src="https://flagcdn.com/w20/uz.png" class="language-flag"> O‘zbekcha
+                            </button>
+                        </form>
+                        <form method="post" action="{% url 'set_language' %}">{% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" name="language" value="ru">
+                                <img src="https://flagcdn.com/w20/ru.png" class="language-flag"> Русский
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                {% if request.user.is_authenticated %}
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="{{ request.user.avatar.url }}" alt="User avatar">
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="{% url 'users:profile' %}">
+                            <i class="fas fa-user"></i> {% trans "Profile" %}
+                        </a>
+                        <a href="{% url 'users:logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> {% trans "Logout" %}
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <nav class="nav-links">
+                    <a href="{% url 'users:register' %}" class="{% if request.resolver_match.url_name == 'register' %}active{% endif %}">
+                        <i class="fas fa-user-plus"></i> {% trans "SignUp" %}
+                    </a>
+                    <a href="{% url 'users:login' %}" class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                        <i class="fas fa-sign-in-alt"></i> {% trans "Login" %}
+                    </a>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/transactions.js' %}"></script>
+    <script src="{% static 'js/income.js' %}"></script>
+    <script src="{% static 'js/expenses.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

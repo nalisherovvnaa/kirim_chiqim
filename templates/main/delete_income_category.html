@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Delete Income Category" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="auth-container">
+    <div class="auth-card text-center">
+        <h1 class="auth-title text-danger">
+            <i class="fas fa-trash-alt"></i>
+            <span>{% trans "Delete Income Category" %}</span>
+        </h1>
+
+        <p>{% trans "Are you sure you want to delete the following category?" %}</p>
+        <h4 class="mb-3">{{ income_category.name }}</h4>
+        {% if income_category.image %}
+            <img src="{{ income_category.image.url }}" class="img-thumbnail mb-3" width="100">
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+            <a href="{% url 'main:categories' %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load form_tags %}
+
+{% block title %} {% trans "New Account" %} {% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-plus-circle"></i>
+            <span>{% trans "Create New Account" %}</span>
+        </h1>
+
+        <form method="POST" enctype="multipart/form-data" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>{% trans "Error:" %}</strong> {% trans "Please correct the errors below." %}
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                {{ form.type.label_tag }}
+                {{ form.type|add_class:"form-control" }}
+                {% for error in form.type.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.currency_type.label_tag }}
+                {{ form.currency_type|add_class:"form-control" }}
+                {% for error in form.currency_type.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.amount.label_tag }}
+                {{ form.amount|add_class:"form-control" }}
+                {% for error in form.amount.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.description.label_tag }}
+                {{ form.description|add_class:"form-control" }}
+                {% for error in form.description.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Create Account" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p><a href="{% url 'main:transactions' %}">{% trans "Back to Transactions" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

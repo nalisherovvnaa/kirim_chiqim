@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Expenses" %}{% endblock title %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-arrow-up text-danger"></i>
+                <span class="en">{% trans "Expenses" %}</span>
+            </h1>
+
+            <!-- Filtrlar va qidiruv -->
+            <form method="get" id="filterForm">
+                {% with request.GET.filter as current_filter %}
+                <div class="filters">
+                    <button type="submit" name="filter" value="all"
+                            class="filter-btn {% if not current_filter or current_filter == 'all' %}active{% endif %}">
+                        <span class="en">{% trans "All" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="day"
+                            class="filter-btn {% if current_filter == 'day' %}active{% endif %}">
+                        <span class="en">{% trans "Today" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="week"
+                            class="filter-btn {% if current_filter == 'week' %}active{% endif %}">
+                        <span class="en">{% trans "This Week" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="month"
+                            class="filter-btn {% if current_filter == 'month' %}active{% endif %}">
+                        <span class="en">{% trans "This Month" %}</span>
+                    </button>
+                    <button type="button" class="filter-btn" onclick="toggleCustomRange()">
+                        <span class="en">{% trans "Custom Range" %}</span>
+                    </button>
+                </div>
+
+                <!-- Maxsus sana oralig'i -->
+                <div class="date-picker" id="customDateRange" style="display: none;">
+                    <div>
+                        <label for="startDate" class="en">{% trans "From" %}</label>
+                        <input type="date" name="start" id="startDate">
+                    </div>
+                    <div>
+                        <label for="endDate" class="en">{% trans "To" %}</label>
+                        <input type="date" name="end" id="endDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <span class="en">{% trans "Apply" %}</span>
+                    </button>
+                </div>
+                {% endwith %}
+            </form>
+
+            <script>
+                function toggleCustomRange() {
+                    document.getElementById('customDateRange').style.display = 'block';
+                }
+            </script>
+            
+            <!-- Chiqim statistikasi -->
+            <div class="expense-stats">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Total Expenses" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="card-value text-danger" id="totalExpenses">{{ total_expense }} UZS</div>
+                    <p class="card-text en">{% trans "All time" %}</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "This Month" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="monthlyExpenses">{{ this_month }} UZS</div>
+                    <!-- <p class="card-text en">{% trans "Compared to last month" %}</p> -->
+                </div>
+                
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Main Category" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="mainCategory">-</div>
+                    <p class="card-text en">{% trans "Food & Dining" %}</p>
+                </div> -->
+            </div>
+            
+            <!-- Byudjet va taqsimot -->
+            <div class="grid">
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Monthly Budget" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="budgetStatus">$1,500 / $2,000</div>
+                    <div class="budget-progress">
+                        <div class="progress-bar">
+                            <div class="progress" id="budgetProgress"></div>
+                        </div>
+                        <p class="card-text en" id="budgetPercentage">{% trans "75% spent" %}</p>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Expense Categories" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="expense-category-chart">
+                        {% trans "Diagramma uchun joy" %}
+                        <canvas id="expenseCategoryChart"></canvas>
+                    </div>
+                </div> -->
+            </div>
+            
+            <!-- Chiqimlar ro'yxati -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h3 class="card-title en">{% trans "Expense Transactions" %}</h3>
+                    <a href="{% url 'main:new_expense' %}" class="btn btn-primary btn-sm" style="text-decoration: none; color: white;">
+                        <i class="fas fa-plus"></i>
+                        {% trans "Add Expense" %}
+                    </a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Date" %}</th>
+                                <th>{% trans "Description" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Amount" %}</th>
+                                <th>{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for expense in expenses %}
+                            <tr>
+                                <td>{{ expense.date|date:"d F Y" }}</td>
+                                <td>{{ expense.description }}</td>
+                                <td>{{ expense.category.name }}</td>
+                                <td>{{ expense.amount }}</td>
+                                <td>
+                                    <a href="{% url 'main:update_expense' expense.id %}" title="{% trans 'Update' %}" style="margin-right: 10px; text-decoration: none;">
+                                        <i class="fa fa-edit action-icon text-primary"></i>
+                                    </a>
+                                    <a href="{% url 'main:delete_expense' expense.id %}" title="{% trans 'Delete' %}">
+                                        <i class="fa fa-trash action-icon text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

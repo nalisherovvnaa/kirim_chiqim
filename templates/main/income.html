@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Income" %}{% endblock title %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-arrow-down text-success"></i>
+                <span class="en">{% trans "Income" %}</span>
+            </h1>
+
+            <!-- Filtrlar va qidiruv -->
+            <form method="get" id="filterForm">
+                {% with request.GET.filter as current_filter %}
+                <div class="filters">
+                    <button type="submit" name="filter" value="all"
+                            class="filter-btn {% if not current_filter or current_filter == 'all' %}active{% endif %}">
+                        <span class="en">{% trans "All" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="day"
+                            class="filter-btn {% if current_filter == 'day' %}active{% endif %}">
+                        <span class="en">{% trans "Today" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="week"
+                            class="filter-btn {% if current_filter == 'week' %}active{% endif %}">
+                        <span class="en">{% trans "This Week" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="month"
+                            class="filter-btn {% if current_filter == 'month' %}active{% endif %}">
+                        <span class="en">{% trans "This Month" %}</span>
+                    </button>
+                    <button type="button" class="filter-btn" onclick="toggleCustomRange()">
+                        <span class="en">{% trans "Custom Range" %}</span>
+                    </button>
+                </div>
+
+                <!-- Maxsus sana oralig'i -->
+                <div class="date-picker" id="customDateRange" style="display: none;">
+                    <div>
+                        <label for="startDate" class="en">{% trans "From" %}</label>
+                        <input type="date" name="start" id="startDate">
+                    </div>
+                    <div>
+                        <label for="endDate" class="en">{% trans "To" %}</label>
+                        <input type="date" name="end" id="endDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <span class="en">{% trans "Apply" %}</span>
+                    </button>
+                </div>
+                {% endwith %}
+            </form>
+
+            <script>
+                function toggleCustomRange() {
+                    document.getElementById('customDateRange').style.display = 'block';
+                }
+            </script>
+            
+            <!-- Kirim statistikasi -->
+            <div class="income-stats">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Total Income" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="card-value text-success" id="totalIncome">{{ total_income }} UZS</div>
+                    <p class="card-text en">{% trans "All time" %}</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "This Month" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="monthlyIncome">{{ this_month }} UZS</div>
+                    <!-- <p class="card-text en">{% trans "Compared to last month" %}</p> -->
+                </div>
+                
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title en">{% trans "Primary Source" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="primarySource">-</div>
+                    <p class="card-text en"></p>
+                </div> -->
+            </div>
+            
+            <!-- Manbalar bo'yicha taqsimot -->
+            <!-- <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title en">{% trans "Income Sources" %}</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                </div>
+                <div class="income-source-chart">
+                    {% trans "Diagramma uchun joy" %}
+                    <canvas id="incomeSourceChart"></canvas>
+                </div>
+            </div> -->
+            
+            <!-- Kirimlar ro'yxati -->
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h3 class="card-title en">{% trans "Income Transactions" %}</h3>
+                    <a href="{% url 'main:new_income' %}" class="btn btn-primary btn-sm" style="text-decoration: none; color: white;">
+                        <i class="fas fa-plus"></i>
+                        {% trans "Add Income" %}
+                    </a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Date" %}</th>
+                                <th>{% trans "Description" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Amount" %}</th>
+                                <th>{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for income in incomes %}
+                            <tr class="">
+                                <td>{{ income.date|date:"d F Y" }}</td>
+                                <td>{{ income.description }}</td>
+                                <td>{{ income.category.name }}</td>
+                                <td>{{ income.amount }}</td>
+                                <td>
+                                    <a href="{% url 'main:update_income' income.id %}" title="{% trans 'Update' %}" style="margin-right: 10px; text-decoration: none;">
+                                        <i class="fa fa-edit action-icon text-primary"></i>
+                                    </a>
+                                    <a href="{% url 'main:delete_income' income.id %}" title="{% trans 'Delete' %}">
+                                        <i class="fa fa-trash action-icon text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

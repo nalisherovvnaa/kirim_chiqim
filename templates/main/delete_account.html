@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete Account" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-trash-alt"></i>
+            <span>{% trans "Delete Account" %}</span>
+        </h1>
+
+        <p>{% trans "Are you sure you want to delete this account?" %}</p>
+        <div class="form-group">
+            <strong>{% trans "Type:" %}</strong> {{ account.type }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Currency:" %}</strong> {{ account.currency_type }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Amount:" %}</strong> {{ account.amount }}
+        </div>
+        <div class="form-group">
+            <strong>{% trans "Description:" %}</strong> {{ account.description }}
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-block">
+                {% trans "Yes, Delete Account" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p><a href="{% url 'main:transactions' %}">{% trans "Cancel" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

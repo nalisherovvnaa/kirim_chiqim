@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load form_tags %}
+
+{% block title %}{% trans "Update Profile" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-user-edit"></i>
+            <span>{% trans "Update Profile" %}</span>
+        </h1>
+
+        <form method="POST" enctype="multipart/form-data" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.avatar.value %}
+                <div class="text-center mb-3">
+                    <img src="{{ form.avatar.value.url }}" width="100" class="img-thumbnail rounded-circle" alt="Avatar">
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                {{ form.avatar.label_tag }}
+                {{ form.avatar|add_class:"form-control-file" }}
+                {% for error in form.avatar.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.first_name.label_tag }}
+                {{ form.first_name|add_class:"form-control" }}
+                {% for error in form.first_name.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.last_name.label_tag }}
+                {{ form.last_name|add_class:"form-control" }}
+                {% for error in form.last_name.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.address.label_tag }}
+                {{ form.address|add_class:"form-control" }}
+                {% for error in form.address.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Save Changes" %}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} {% trans "Personal Finance" %} {% endblock title %}
+
+{% block content %}
+    <!-- Main Content -->
+    <main>
+        <div class="container">            
+            <!-- Summary Cards -->
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans "Total Balance" %}</h3>
+                        <div class="card-icon">
+                            <a href="{% url 'main:new_account' %}" style="text-decoration: none;color: #4895ef;"><i class="fas fa-wallet"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-value"> {{ total_balance }} UZS</div>
+                    <p class="card-text">{% trans "Across all accounts" %}</p>
+                </div>
+                
+                <div class="card card-success">
+                    <div class="card-header">
+                        <a href=""></a>
+                        <h3 class="card-title">{% trans "Income" %}</h3>
+                        <div class="card-icon">
+                            <a href="{% url 'main:new_income' %}" style="text-decoration: none;color: #60a6f6;"><i class="fas fa-arrow-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-value text-success">{{ total_income }} UZS</div>
+                    <p class="card-text">{% trans "This month" %}</p>
+                </div>
+                
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans "Expenses" %}</h3>
+                        <div class="card-icon">
+                            
+                            <a href="{% url 'main:new_expense' %}" style="text-decoration: none;color: #f72585;"><i class="fas fa-arrow-up"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-value text-danger">{{ total_expense }} UZS</div>
+                    <p class="card-text">{% trans "This month" %}</p>
+                </div>
+            </div>
+            
+            <!-- Charts Row -->
+            <!-- <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans "Monthly Overview" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                            <span>{% trans "Bar Chart Placeholder" %}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans "Expense Categories" %}</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                            <span>{% trans "Pie Chart Placeholder" %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+{% endblock content %}

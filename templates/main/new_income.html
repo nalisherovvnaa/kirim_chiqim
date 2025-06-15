@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load form_tags %}
+
+{% block title %}{% trans "New Income" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-plus-circle"></i>
+            <span>{% trans "Create New Income" %}</span>
+        </h1>
+
+        <form method="POST" enctype="multipart/form-data" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>{% trans "Error" %}:</strong> {% trans "Please correct the errors below." %}
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                {{ form.category.label_tag }}
+                {{ form.category|add_class:"form-control" }}
+                {% for error in form.category.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.account_type.label_tag }}
+                {{ form.account_type|add_class:"form-control" }}
+                {% for error in form.account_type.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.amount.label_tag }}
+                {{ form.amount|add_class:"form-control" }}
+                {% for error in form.amount.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.date.label_tag }}
+                {{ form.date|add_class:"form-control" }}
+                {% for error in form.date.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.description.label_tag }}
+                {{ form.description|add_class:"form-control" }}
+                {% for error in form.description.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">
+                {% trans "Create Income" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p><a href="{% url 'main:income' %}">{% trans "Back to Income" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

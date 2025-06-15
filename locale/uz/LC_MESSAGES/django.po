@@ -1,0 +1,1962 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-13 09:28+0000\n"
+"PO-Revision-Date: 2025-05-13 14:50+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Uzbek <uz@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config/settings.py:173
+msgid "English"
+msgstr "Ingliz"
+
+#: config/settings.py:174
+msgid "Uzbek"
+msgstr "O‘zbek"
+
+#: config/settings.py:175
+msgid "Russian"
+msgstr "Rus"
+
+#: main/models.py:7
+msgid "Uzbek so'm"
+msgstr "O‘zbek so‘mi"
+
+#: main/models.py:8
+msgid "US Dollar"
+msgstr "AQSh dollari"
+
+#: main/models.py:9
+msgid "Russian Ruble"
+msgstr "Rus rubli"
+
+#: main/models.py:10
+msgid "Euro"
+msgstr "Yevro"
+
+#: templates/base.html:18
+msgid "MyBalans"
+msgstr "Mening balansim"
+
+#: templates/base.html:24
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: templates/base.html:28 templates/main/transactions.html:5
+#: templates/main/transactions.html:59 templates/users/profile.html:30
+msgid "Transactions"
+msgstr "Tranzaksiyalar"
+
+#: templates/base.html:32 templates/main/income.html:5
+#: templates/main/income.html:12 templates/main/main.html:27
+msgid "Income"
+msgstr "Daromad"
+
+#: templates/base.html:36
+msgid "Expense"
+msgstr "Xarajat"
+
+#: templates/base.html:40 templates/main/categories.html:5
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/base.html:102 templates/users/profile.html:5
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/base.html:106 templates/users/profile.html:45
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/base.html:114
+msgid "SignUp"
+msgstr "Ro‘yxatdan o‘tish"
+
+#: templates/base.html:119 templates/users/login.html:5
+#: templates/users/login.html:46 templates/users/register.html:52
+msgid "Login"
+msgstr "Kirish"
+
+#: templates/main/categories.html:11
+msgid "Income & Expense Categories"
+msgstr "Daromad va xarajat kategoriyalari"
+
+#: templates/main/categories.html:18
+msgid "Income Categories"
+msgstr "Daromad kategoriyalari"
+
+#: templates/main/categories.html:21
+msgid "Add Income Category"
+msgstr "Daromad kategoriyasini qo‘shish"
+
+#: templates/main/categories.html:28
+msgid "Icon"
+msgstr "Belgi"
+
+#: templates/main/categories.html:29 templates/main/categories.html:73
+msgid "Name"
+msgstr "Nomi"
+
+#: templates/main/categories.html:30 templates/main/categories.html:74
+#: templates/main/expenses.html:149 templates/main/income.html:131
+#: templates/main/transactions.html:28 templates/main/transactions.html:132
+msgid "Actions"
+msgstr "Amallar"
+
+#: templates/main/categories.html:39 templates/main/categories.html:83
+msgid "Edit"
+msgstr "Tahrirlash"
+
+#: templates/main/categories.html:42 templates/main/categories.html:86
+#: templates/main/delete_expense_category.html:24
+#: templates/main/delete_income_category.html:24
+#: templates/main/expenses.html:163 templates/main/income.html:145
+#: templates/main/transactions.html:42 templates/main/transactions.html:147
+#: templates/main/transactions.html:154
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr "O‘chirish"
+
+#: templates/main/categories.html:49
+msgid "No income categories."
+msgstr "Daromad kategoriyalari mavjud emas."
+
+#: templates/main/categories.html:62 templates/main/expenses.html:119
+#: templates/main/main.html:67
+msgid "Expense Categories"
+msgstr "Xarajat kategoriyalari"
+
+#: templates/main/categories.html:65
+msgid "Add Expense Category"
+msgstr "Xarajat kategoriyasini qo‘shish"
+
+#: templates/main/categories.html:72
+#: venv/lib/python3.12/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr "Rasm"
+
+#: templates/main/categories.html:93
+msgid "No expense categories."
+msgstr "Xarajat kategoriyalari mavjud emas."
+
+#: templates/main/delete_account.html:5 templates/main/delete_account.html:14
+msgid "Delete Account"
+msgstr "Hisobni o‘chirish"
+
+#: templates/main/delete_account.html:17
+msgid "Are you sure you want to delete this account?"
+msgstr "Bu hisobni o‘chirishga ishonchingiz komilmi?"
+
+#: templates/main/delete_account.html:19
+msgid "Type:"
+msgstr "Turi:"
+
+#: templates/main/delete_account.html:22
+msgid "Currency:"
+msgstr "Valyuta:"
+
+#: templates/main/delete_account.html:25 templates/main/delete_expense.html:25
+#: templates/main/delete_income.html:25
+msgid "Amount:"
+msgstr "Miqdori:"
+
+#: templates/main/delete_account.html:28 templates/main/delete_expense.html:31
+#: templates/main/delete_income.html:31
+msgid "Description:"
+msgstr "Tavsif:"
+
+#: templates/main/delete_account.html:34
+msgid "Yes, Delete Account"
+msgstr "Ha, hisobni o‘chirish"
+
+#: templates/main/delete_account.html:39 templates/main/delete_expense.html:42
+#: templates/main/delete_expense_category.html:25
+#: templates/main/delete_income.html:42
+#: templates/main/delete_income_category.html:25
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: templates/main/delete_expense.html:5 templates/main/delete_expense.html:14
+msgid "Delete Expense"
+msgstr "Xarajatni o‘chirish"
+
+#: templates/main/delete_expense.html:17
+msgid "Are you sure you want to delete this expense?"
+msgstr "Bu xarajatni o‘chirishga ishonchingiz komilmi?"
+
+#: templates/main/delete_expense.html:19 templates/main/delete_income.html:19
+msgid "Category:"
+msgstr "Kategoriya:"
+
+#: templates/main/delete_expense.html:22 templates/main/delete_income.html:22
+msgid "Account Type:"
+msgstr "Hisob turi:"
+
+#: templates/main/delete_expense.html:28 templates/main/delete_income.html:28
+msgid "Date:"
+msgstr "Sana:"
+
+#: templates/main/delete_expense.html:37 templates/main/delete_income.html:37
+msgid "Yes, Delete"
+msgstr "Ha, o‘chirish"
+
+#: templates/main/delete_expense_category.html:5
+#: templates/main/delete_expense_category.html:13
+msgid "Delete Expense Category"
+msgstr "Xarajat kategoriyasini o‘chirish"
+
+#: templates/main/delete_expense_category.html:16
+#: templates/main/delete_income_category.html:16
+msgid "Are you sure you want to delete the following category?"
+msgstr "Quyidagi kategoriyani o‘chirishga ishonchingiz komilmi?"
+
+#: templates/main/delete_income.html:5 templates/main/delete_income.html:14
+msgid "Delete Income"
+msgstr "Daromadni o‘chirish"
+
+#: templates/main/delete_income.html:17
+msgid "Are you sure you want to delete this income?"
+msgstr "Bu daromadni o‘chirishga ishonchingiz komilmi?"
+
+#: templates/main/delete_income_category.html:5
+#: templates/main/delete_income_category.html:13
+msgid "Delete Income Category"
+msgstr "Daromad kategoriyasini o‘chirish"
+
+#: templates/main/expenses.html:5 templates/main/expenses.html:12
+#: templates/main/main.html:38
+msgid "Expenses"
+msgstr "Xarajatlar"
+
+#: templates/main/expenses.html:21 templates/main/income.html:21
+#: templates/main/transactions.html:68
+msgid "All"
+msgstr "Hammasi"
+
+#: templates/main/expenses.html:25 templates/main/income.html:25
+#: templates/main/transactions.html:72
+msgid "Today"
+msgstr "Bugun"
+
+#: templates/main/expenses.html:29 templates/main/income.html:29
+#: templates/main/transactions.html:76
+msgid "This Week"
+msgstr "Bu hafta"
+
+#: templates/main/expenses.html:33 templates/main/expenses.html:78
+#: templates/main/income.html:33 templates/main/income.html:78
+#: templates/main/transactions.html:80
+msgid "This Month"
+msgstr "Bu oy"
+
+#: templates/main/expenses.html:36 templates/main/income.html:36
+#: templates/main/transactions.html:83
+msgid "Custom Range"
+msgstr "Maxsus diapazon"
+
+#: templates/main/expenses.html:43 templates/main/income.html:43
+#: templates/main/transactions.html:90
+msgid "From"
+msgstr "Dan"
+
+#: templates/main/expenses.html:47 templates/main/income.html:47
+#: templates/main/transactions.html:94
+msgid "To"
+msgstr "Gacha"
+
+#: templates/main/expenses.html:51 templates/main/income.html:51
+#: templates/main/transactions.html:98
+msgid "Apply"
+msgstr "Qo‘llash"
+
+#: templates/main/expenses.html:67
+msgid "Total Expenses"
+msgstr "Umumiy xarajatlar"
+
+#: templates/main/expenses.html:73 templates/main/income.html:73
+msgid "All time"
+msgstr "Barcha vaqt"
+
+#: templates/main/expenses.html:84 templates/main/income.html:84
+msgid "Compared to last month"
+msgstr "O‘tgan oy bilan solishtirganda"
+
+#: templates/main/expenses.html:89
+msgid "Main Category"
+msgstr "Asosiy kategoriya"
+
+#: templates/main/expenses.html:95
+msgid "Food & Dining"
+msgstr "Oziq-ovqat va ovqatlanish"
+
+#: templates/main/expenses.html:103
+msgid "Monthly Budget"
+msgstr "Oylik byudjet"
+
+#: templates/main/expenses.html:113
+#, python-format
+msgid "75%% spent"
+msgstr "75%% sarflandi"
+
+#: templates/main/expenses.html:125 templates/main/income.html:108
+msgid "Diagramma uchun joy"
+msgstr "Diagramma uchun joy"
+
+#: templates/main/expenses.html:134
+msgid "Expense Transactions"
+msgstr "Xarajat tranzaksiyalari"
+
+#: templates/main/expenses.html:137
+msgid "Add Expense"
+msgstr "Xarajat qo‘shish"
+
+#: templates/main/expenses.html:145 templates/main/income.html:127
+#: templates/main/transactions.html:128
+msgid "Date"
+msgstr "Sana"
+
+#: templates/main/expenses.html:146 templates/main/income.html:128
+#: templates/main/transactions.html:27 templates/main/transactions.html:129
+msgid "Description"
+msgstr "Tavsif"
+
+#: templates/main/expenses.html:147 templates/main/income.html:129
+#: templates/main/transactions.html:130
+msgid "Category"
+msgstr "Kategoriya"
+
+#: templates/main/expenses.html:148 templates/main/income.html:130
+#: templates/main/transactions.html:26 templates/main/transactions.html:131
+msgid "Amount"
+msgstr "Miqdori"
+
+#: templates/main/expenses.html:160 templates/main/income.html:142
+#: templates/main/transactions.html:39 templates/main/transactions.html:144
+#: templates/main/transactions.html:151
+#: templates/main/update_expense_category.html:43
+#: templates/main/update_income_category.html:43
+msgid "Update"
+msgstr "Yangilash"
+
+#: templates/main/income.html:67
+msgid "Total Income"
+msgstr "Umumiy daromad"
+
+#: templates/main/income.html:89
+msgid "Primary Source"
+msgstr "Asosiy manba"
+
+#: templates/main/income.html:102
+msgid "Income Sources"
+msgstr "Daromad manbalari"
+
+#: templates/main/income.html:116
+msgid "Income Transactions"
+msgstr "Daromad tranzaksiyalari"
+
+#: templates/main/income.html:119
+msgid "Add Income"
+msgstr "Daromad qo‘shish"
+
+#: templates/main/main.html:5
+msgid "Personal Finance"
+msgstr "Shaxsiy moliya"
+
+#: templates/main/main.html:15
+msgid "Total Balance"
+msgstr "Umumiy balans"
+
+#: templates/main/main.html:21
+msgid "Across all accounts"
+msgstr "Barcha hisoblar bo‘yicha"
+
+#: templates/main/main.html:33 templates/main/main.html:45
+msgid "This month"
+msgstr "Bu oy"
+
+#: templates/main/main.html:53
+msgid "Monthly Overview"
+msgstr "Oylik umumiy ko‘rinish"
+
+#: templates/main/main.html:60
+msgid "Bar Chart Placeholder"
+msgstr "Ustunli diagramma uchun joy"
+
+#: templates/main/main.html:74
+msgid "Pie Chart Placeholder"
+msgstr "Doira diagramma uchun joy"
+
+#: templates/main/new_account.html:6
+msgid "New Account"
+msgstr "Yangi hisob"
+
+#: templates/main/new_account.html:15
+msgid "Create New Account"
+msgstr "Yangi hisob yaratish"
+
+#: templates/main/new_account.html:23 templates/main/new_expense.html:23
+#: templates/main/update_account.html:23 templates/main/update_expense.html:23
+#: templates/main/update_income.html:23
+msgid "Error:"
+msgstr "Xato:"
+
+#: templates/main/new_account.html:23 templates/main/new_expense.html:23
+#: templates/main/new_expense_category.html:35
+#: templates/main/new_income.html:23 templates/main/new_income_category.html:24
+#: templates/main/update_account.html:23 templates/main/update_expense.html:23
+#: templates/main/update_income.html:23 templates/users/change_password.html:22
+msgid "Please correct the errors below."
+msgstr "Iltimos, quyidagi xatolarni tuzating."
+
+#: templates/main/new_account.html:60 templates/users/register.html:12
+#: templates/users/register.html:47
+msgid "Create Account"
+msgstr "Hisob yaratish"
+
+#: templates/main/new_account.html:65 templates/main/update_account.html:65
+msgid "Back to Transactions"
+msgstr "Tranzaksiyalarga qaytish"
+
+#: templates/main/new_expense.html:6
+msgid "New Expense"
+msgstr "Yangi xarajat"
+
+#: templates/main/new_expense.html:15
+msgid "Create New Expense"
+msgstr "Yangi xarajat yaratish"
+
+#: templates/main/new_expense.html:68
+msgid "Create Expense"
+msgstr "Xarajat yaratish"
+
+#: templates/main/new_expense.html:73 templates/main/update_expense.html:73
+msgid "Back to Expenses"
+msgstr "Xarajatlar ro‘yxatiga qaytish"
+
+#: templates/main/new_expense_category.html:6
+msgid "New Expense Category"
+msgstr "Yangi xarajat kategoriyasi"
+
+#: templates/main/new_expense_category.html:27
+msgid "Create New Expense Category"
+msgstr "Yangi xarajat kategoriyasini yaratish"
+
+#: templates/main/new_expense_category.html:35
+#: templates/main/new_income.html:23 templates/main/new_income_category.html:24
+#: templates/users/change_password.html:22 templates/users/login.html:22
+#: templates/users/reset_password.html:22
+#: templates/users/set_new_password.html:22 templates/users/verify_code.html:22
+msgid "Error"
+msgstr "Xato"
+
+#: templates/main/new_expense_category.html:56
+#: templates/main/new_income_category.html:52
+msgid "Create"
+msgstr "Yaratish"
+
+#: templates/main/new_income.html:6
+msgid "New Income"
+msgstr "Yangi daromad"
+
+#: templates/main/new_income.html:15
+msgid "Create New Income"
+msgstr "Yangi daromad yaratish"
+
+#: templates/main/new_income.html:68
+msgid "Create Income"
+msgstr "Daromad yaratish"
+
+#: templates/main/new_income.html:73
+msgid "Back to Income"
+msgstr "Daromadlarga qaytish"
+
+#: templates/main/new_income_category.html:6
+msgid "New Income Category"
+msgstr "Yangi daromad kategoriyasi"
+
+#: templates/main/new_income_category.html:16
+msgid "Create New Income Category"
+msgstr "Yangi daromad kategoriyasini yaratish"
+
+#: templates/main/transactions.html:13
+msgid "Account Transactions"
+msgstr "Hisob tranzaksiyalari"
+
+#: templates/main/transactions.html:16
+msgid "Add New Account"
+msgstr "Yangi hisob qo‘shish"
+
+#: templates/main/transactions.html:24
+msgid "Type"
+msgstr "Turi"
+
+#: templates/main/transactions.html:25
+msgid "Currency"
+msgstr "Valyuta"
+
+#: templates/main/transactions.html:49
+msgid "No accounts found."
+msgstr "Hisoblar topilmadi."
+
+#: templates/main/transactions.html:113
+msgid "All Transactions"
+msgstr "Barcha tranzaksiyalar"
+
+#: templates/main/update_account.html:6 templates/main/update_account.html:15
+msgid "Edit Account"
+msgstr "Hisobni tahrirlash"
+
+#: templates/main/update_account.html:60
+msgid "Update Account"
+msgstr "Hisobni yangilash"
+
+#: templates/main/update_expense.html:6 templates/main/update_expense.html:15
+msgid "Edit Expense"
+msgstr "Xarajatni tahrirlash"
+
+#: templates/main/update_expense.html:68
+msgid "Update Expense"
+msgstr "Xarajatni yangilash"
+
+#: templates/main/update_expense_category.html:6
+#: templates/main/update_expense_category.html:14
+msgid "Edit Expense Category"
+msgstr "Xarajat kategoriyasini tahrirlash"
+
+#: templates/main/update_expense_category.html:21
+msgid "Select Icon"
+msgstr "Belgini tanlash"
+
+#: templates/main/update_income.html:6 templates/main/update_income.html:15
+msgid "Edit Income"
+msgstr "Daromadni tahrirlash"
+
+#: templates/main/update_income.html:68
+msgid "Update Income"
+msgstr "Daromadni yangilash"
+
+#: templates/main/update_income.html:73
+msgid "Back to Income List"
+msgstr "Daromadlar ro‘yxatiga qaytish"
+
+#: templates/main/update_income_category.html:6
+#: templates/main/update_income_category.html:14
+msgid "Edit Income Category"
+msgstr "Daromad kategoriyasini tahrirlash"
+
+#: templates/users/change_password.html:6
+#: templates/users/change_password.html:15 templates/users/profile.html:41
+msgid "Change Password"
+msgstr "Parolni o‘zgartirish"
+
+#: templates/users/change_password.html:29
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:529
+msgid "Change"
+msgstr "O‘zgartirish"
+
+#: templates/users/login.html:14
+msgid "Login to Your Account"
+msgstr "Hisobingizga kirish"
+
+#: templates/users/login.html:22
+msgid "Please enter a correct email and password."
+msgstr "Iltimos, to‘g‘ri email va parolni kiriting."
+
+#: templates/users/login.html:27 templates/users/register.html:21
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: templates/users/login.html:32 templates/users/register.html:31
+msgid "Password"
+msgstr "Parol"
+
+#: templates/users/login.html:38
+msgid "Remember me"
+msgstr "Meni eslab qol"
+
+#: templates/users/login.html:42
+msgid "Forgot password?"
+msgstr "Parolni unutdingizmi?"
+
+#: templates/users/login.html:51
+msgid "Don't have an account? "
+msgstr "Hisobingiz yo‘qmi?"
+
+#: templates/users/login.html:51 templates/users/register.html:4
+msgid "Register"
+msgstr "Ro‘yxatdan o‘tish"
+
+#: templates/users/profile.html:17
+msgid "User avatar"
+msgstr "Foydalanuvchi avatari"
+
+#: templates/users/profile.html:26
+msgid "Balance"
+msgstr "Balans"
+
+#: templates/users/profile.html:37 templates/users/profile.html:63
+msgid "Edit Profile"
+msgstr "Profilni tahrirlash"
+
+#: templates/users/profile.html:58
+msgid "Personal Information"
+msgstr "Shaxsiy ma’lumotlar"
+
+#: templates/users/profile.html:70
+msgid "Full Name"
+msgstr "To‘liq ism"
+
+#: templates/users/profile.html:74
+msgid "Email"
+msgstr "Email"
+
+#: templates/users/profile.html:85
+msgid "Account Settings"
+msgstr "Hisob sozlamalari"
+
+#: templates/users/profile.html:91
+msgid "Theme"
+msgstr "Mavzu"
+
+#: templates/users/profile.html:92
+msgid "Light"
+msgstr "Yorug‘"
+
+#: templates/users/profile.html:95
+msgid "Account Created"
+msgstr "Hisob yaratilgan"
+
+#: templates/users/profile.html:99
+msgid "Last Login"
+msgstr "Oxirgi kirish"
+
+#: templates/users/register.html:13
+msgid "Hisob yaratish"
+msgstr "Hisob yaratish"
+
+#: templates/users/register.html:14
+msgid "Создать аккаунт"
+msgstr "Hisob yaratish"
+
+#: templates/users/register.html:26
+msgid "Address"
+msgstr "Manzil"
+
+#: templates/users/register.html:33
+msgid "Minimum 8 characters"
+msgstr "Kamida 8 ta belgi"
+
+#: templates/users/register.html:37 templates/users/set_new_password.html:32
+msgid "Confirm Password"
+msgstr "Parolni tasdiqlash"
+
+#: templates/users/register.html:43
+msgid "I agree to the Terms & Conditions"
+msgstr "Men shartlar va qoidalarga roziman"
+
+#: templates/users/register.html:52
+msgid "Already have an account?"
+msgstr "Allaqachon hisobingiz bormi?"
+
+#: templates/users/reset_password.html:5
+msgid "Reset Password"
+msgstr "Parolni tiklash"
+
+#: templates/users/reset_password.html:14
+msgid "Reset Your Password"
+msgstr "Parolingizni tiklash"
+
+#: templates/users/reset_password.html:27
+msgid "Phone number or Email"
+msgstr "Telefon raqami yoki Email"
+
+#: templates/users/reset_password.html:28
+msgid "Enter your phone or email"
+msgstr "Telefon raqamingiz yoki emailingizni kiriting"
+
+#: templates/users/reset_password.html:32
+msgid "Send"
+msgstr "Yuborish"
+
+#: templates/users/set_new_password.html:5
+#: templates/users/set_new_password.html:27
+msgid "New Password"
+msgstr "Yangi parol"
+
+#: templates/users/set_new_password.html:14
+msgid "Set New Password"
+msgstr "Yangi parol o‘rnatish"
+
+#: templates/users/set_new_password.html:28
+msgid "Enter new password"
+msgstr "Yangi parolni kiriting"
+
+#: templates/users/set_new_password.html:33
+msgid "Confirm new password"
+msgstr "Yangi parolni tasdiqlang"
+
+#: templates/users/set_new_password.html:37 templates/users/verify_code.html:32
+msgid "Submit"
+msgstr "Yuborish"
+
+#: templates/users/update_profile.html:6 templates/users/update_profile.html:15
+msgid "Update Profile"
+msgstr "Profilni yangilash"
+
+#: templates/users/update_profile.html:60
+msgid "Save Changes"
+msgstr "O‘zgarishlarni saqlash"
+
+#: templates/users/verify_code.html:5 templates/users/verify_code.html:14
+msgid "Enter Verification Code"
+msgstr "Tasdiqlash kodini kiriting"
+
+#: templates/users/verify_code.html:27
+msgid "Verification Code"
+msgstr "Tasdiqlash kodi"
+
+#: templates/users/verify_code.html:28
+msgid "Enter the code sent to your email"
+msgstr "Emailingizga yuborilgan kodni kiriting"
+
+#: venv/lib/python3.12/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr "Xabarlar"
+
+#: venv/lib/python3.12/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr "Sayt xaritalari"
+
+#: venv/lib/python3.12/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr "Statik fayllar"
+
+#: venv/lib/python3.12/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr "Sindikatsiya"
+
+#: venv/lib/python3.12/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr "…"
+
+#: venv/lib/python3.12/site-packages/django/core/paginator.py:32
+msgid "That page number is not an integer"
+msgstr "Bu sahifa raqami butun son emas"
+
+#: venv/lib/python3.12/site-packages/django/core/paginator.py:33
+msgid "That page number is less than 1"
+msgstr "Bu sahifa raqami 1 dan kichik"
+
+#: venv/lib/python3.12/site-packages/django/core/paginator.py:34
+msgid "That page contains no results"
+msgstr "Bu sahifada hech qanday natija yo‘q"
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr "To‘g‘ri qiymatni kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr "To‘g‘ri domen nomini kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:153
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:775
+msgid "Enter a valid URL."
+msgstr "To‘g‘ri URL manzilini kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr "To‘g‘ri butun sonni kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr "To‘g‘ri email manzilini kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"To‘g‘ri “slug” kiriting, u harflar, raqamlar, pastki chiziqlar yoki defislardan iborat bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+"To‘g‘ri “slug” kiriting, u Unicode harflari, raqamlari, pastki chiziqlari yoki defislaridan iborat bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:309
+#: venv/lib/python3.12/site-packages/django/core/validators.py:318
+#: venv/lib/python3.12/site-packages/django/core/validators.py:332
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "To‘g‘ri %(protocol)s manzilini kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr "IPv4"
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:320
+#: venv/lib/python3.12/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr "IPv6"
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr "IPv4 yoki IPv6"
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr "Faqat vergul bilan ajratilgan raqamlarni kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "Ushbu qiymat %(limit_value)s bo‘lishini ta’minlang (hozirgi qiymat %(show_value)s)."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "Ushbu qiymat %(limit_value)s dan kichik yoki teng bo‘lishini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Ushbu qiymat %(limit_value)s dan katta yoki teng bo‘lishini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Ushbu qiymat %(limit_value)s qadam hajmining ko‘paytmasi bo‘lishini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Ushbu qiymat %(limit_value)s qadam hajmining ko‘paytmasi bo‘lishini ta’minlang, "
+"%(offset)s dan boshlab, masalan, %(offset)s, %(valid_value1)s, %(valid_value2)s va hokazo."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Ushbu qiymat kamida %(limit_value)d ta belgi bo‘lishini ta’minlang (hozirgi %(show_value)d ta)."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Ushbu qiymat ko‘pi bilan %(limit_value)d ta belgi bo‘lishini ta’minlang (hozirgi %(show_value)d ta)."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:514
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:366
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:405
+msgid "Enter a number."
+msgstr "Raqam kiriting."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+"Jami %(max)s ta raqamdan oshmasligini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+"Kasrdan keyin %(max)s ta raqamdan oshmasligini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+"Kasrdan oldin %(max)s ta raqamdan oshmasligini ta’minlang."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+"Fayl kengaytmasi “%(extension)s” ruxsat etilmagan. Ruxsat etilgan kengaytmalar: %(allowed_extensions)s."
+
+#: venv/lib/python3.12/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr "Null belgilari ruxsat etilmaydi."
+
+#: venv/lib/python3.12/site-packages/django/db/models/base.py:1600
+#: venv/lib/python3.12/site-packages/django/forms/models.py:908
+msgid "and"
+msgstr "va"
+
+#: venv/lib/python3.12/site-packages/django/db/models/base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "Ushbu %(field_labels)s bilan %(model_name)s allaqachon mavjud."
+
+#: venv/lib/python3.12/site-packages/django/db/models/constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "“%(name)s” cheklovi buzildi."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "%(value)r qiymati to‘g‘ri tanlov emas."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr "Bu maydon null bo‘lishi mumkin emas."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr "Bu maydon bo‘sh bo‘lishi mumkin emas."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "Ushbu %(field_label)s bilan %(model_name)s allaqachon mavjud."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s %(date_field_label)s %(lookup_type)s uchun yagona bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Maydon turi: %(field_type)s"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "“%(value)s” qiymati faqat True yoki False bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "“%(value)s” qiymati faqat True, False yoki None bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr "Boolean (Yo True, yo False)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "Satr (maksimal %(max_length)s gacha)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1217
+msgid "String (unlimited)"
+msgstr "Satr (cheksiz)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1326
+msgid "Comma-separated integers"
+msgstr "Vergul bilan ajratilgan butun sonlar"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+"“%(value)s” qiymati noto‘g‘ri sana formatiga ega. U YYYY-MM-DD formatida bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1431
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+"“%(value)s” qiymati to‘g‘ri formatda (YYYY-MM-DD), lekin noto‘g‘ri sana."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1435
+msgid "Date (without time)"
+msgstr "Sana (vaqtsiz)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+"“%(value)s” qiymati noto‘g‘ri formatga ega. U YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] formatida bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+"“%(value)s” qiymati to‘g‘ri formatda (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]), lekin noto‘g‘ri sana/vaqt."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1575
+msgid "Date (with time)"
+msgstr "Sana (vaqt bilan)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "“%(value)s” qiymati o‘nlik son bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1704
+msgid "Decimal number"
+msgstr "O‘nlik son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+"“%(value)s” qiymati noto‘g‘ri formatga ega. U [DD] [[HH:]MM:]ss[.uuuuuu] formatida bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr "Davomiylik"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr "Email manzili"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr "Fayl yo‘li"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "“%(value)s” qiymati haqiqiy son bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr "Haqiqiy son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "“%(value)s” qiymati butun son bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr "Butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr "Katta (8 bayt) butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr "Kichik butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr "IPv4 manzili"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr "IP manzili"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "“%(value)s” qiymati None, True yoki False bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr "Boolean (True, False yoki None)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr "Musbat katta butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr "Musbat butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr "Musbat kichik butun son"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Slug (maksimal %(max_length)s gacha)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr "Matn"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+"“%(value)s” qiymati noto‘g‘ri formatga ega. U HH:MM[:ss[.uuuuuu]] formatida bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+"“%(value)s” qiymati to‘g‘ri formatda (HH:MM[:ss[.uuuuuu]]), lekin noto‘g‘ri vaqt."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr "Vaqt"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr "URL"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr "Xom ikkilik ma’lumotlar"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” to‘g‘ri UUID emas."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr "Umumiy yagona identifikator"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr "Fayl"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr "JSON obyekti"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr "Qiymat to‘g‘ri JSON bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr "%(model)s obyekti %(field)s %(value)r bilan to‘g‘ri tanlov emas."
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr "Tashqi kalit (turi bog‘langan maydon tomonidan aniqlanadi)"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr "Birga-bir munosabat"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "%(from)s-%(to)s munosabati"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "%(from)s-%(to)s munosabatlari"
+
+#: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr "Ko‘pga-ko‘p munosabat"
+
+#: venv/lib/python3.12/site-packages/django/forms/boundfield.py:185
+msgid ":?.!"
+msgstr ":?.!"
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:95
+msgid "This field is required."
+msgstr "Bu maydon to‘ldirilishi shart."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:315
+msgid "Enter a whole number."
+msgstr "Butun son kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:486
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1267
+msgid "Enter a valid date."
+msgstr "To‘g‘ri sana kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:509
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1268
+msgid "Enter a valid time."
+msgstr "To‘g‘ri vaqt kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:536
+msgid "Enter a valid date/time."
+msgstr "To‘g‘ri sana/vaqt kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:570
+msgid "Enter a valid duration."
+msgstr "To‘g‘ri davomiylik kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:571
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Kunlar soni {min_days} va {max_days} orasida bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:640
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Fayl yuborilmadi. Forma kodlash turini tekshiring."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:641
+msgid "No file was submitted."
+msgstr "Fayl yuborilmadi."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:642
+msgid "The submitted file is empty."
+msgstr "Yuborilgan fayl bo‘sh."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:644
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] "Fayl nomi ko‘pi bilan %(max)d ta belgi bo‘lishi kerak (hozirgi %(length)d ta)."
+msgstr[1] "Fayl nomi ko‘pi bilan %(max)d ta belgi bo‘lishi kerak (hozirgi %(length)d ta)."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:649
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "Iltimos, fayl yuboring yoki tozalash katagiga belgi qo‘ying, ikkalasini birga emas."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:717
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"To‘g‘ri rasm yuklang. Siz yuklagan fayl rasm emas yoki buzilgan rasm."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:889
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:975
+#: venv/lib/python3.12/site-packages/django/forms/models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "To‘g‘ri tanlovni tanlang. %(value)s mavjud tanlovlardan biri emas."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:977
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1096
+#: venv/lib/python3.12/site-packages/django/forms/models.py:1590
+msgid "Enter a list of values."
+msgstr "Qiymatlar ro‘yxatini kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1097
+msgid "Enter a complete value."
+msgstr "To‘liq qiymatni kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1339
+msgid "Enter a valid UUID."
+msgstr "To‘g‘ri UUID kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/fields.py:1369
+msgid "Enter a valid JSON."
+msgstr "To‘g‘ri JSON kiriting."
+
+#: venv/lib/python3.12/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ":"
+
+#: venv/lib/python3.12/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Yashirin maydon %(name)s) %(error)s"
+
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"ManagementForm ma’lumotlari yo‘q yoki o‘zgartirilgan. Yo‘qolgan maydonlar: %(field_names)s. Agar muammo davom etsa, xato haqida xabar berishingiz kerak bo‘lishi mumkin."
+
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Iltimos, ko‘pi bilan %(num)d ta forma yuboring."
+msgstr[1] "Iltimos, ko‘pi bilan %(num)d ta forma yuboring."
+
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Iltimos, kamida %(num)d ta forma yuboring."
+msgstr[1] "Iltimos, kamida %(num)d ta forma yuboring."
+
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.12/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr "Tartib"
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Iltimos, %(field)s uchun takrorlangan ma’lumotlarni tuzating."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "Iltimos, %(field)s uchun takrorlangan ma’lumotlarni tuzating, bu yagona bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Iltimos, %(field_name)s uchun takrorlangan ma’lumotlarni tuzating, bu %(date_field)s da %(lookup)s uchun yagona bo‘lishi kerak."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:922
+msgid "Please correct the duplicate values below."
+msgstr "Iltimos, quyidagi takrorlangan qiymatlarni tuzating."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr "Ichki qiymat ota obyekti bilan mos kelmadi."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "To‘g‘ri tanlovni tanlang. Bu tanlov mavjud tanlovlardan biri emas."
+
+#: venv/lib/python3.12/site-packages/django/forms/models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” to‘g‘ri qiymat emas."
+
+#: venv/lib/python3.12/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s vaqt mintaqasida %(current_timezone)s talqin qilinmadi; u noaniq bo‘lishi yoki mavjud emas bo‘lishi mumkin."
+
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:527
+msgid "Clear"
+msgstr "Tozalash"
+
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:528
+msgid "Currently"
+msgstr "Hozirda"
+
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:866
+msgid "Unknown"
+msgstr "Noma’lum"
+
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:867
+msgid "Yes"
+msgstr "Ha"
+
+#: venv/lib/python3.12/site-packages/django/forms/widgets.py:868
+msgid "No"
+msgstr "Yo‘q"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr "ha,yo‘q,ehtimol"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:903
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d bayt"
+msgstr[1] "%(size)d bayt"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+#: venv/lib/python3.12/site-packages/django/template/defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr "kechqurun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr "ertalab"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr "Kechqurun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr "Ertalab"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr "yarim tun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr "tush"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr "Dushanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr "Seshanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr "Chorshanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr "Payshanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr "Juma"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr "Shanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr "Yakshanba"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr "Dush"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr "Sesh"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr "Chor"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr "Pay"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr "Jum"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr "Shan"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr "Yak"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr "Yanvar"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr "Fevral"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr "Mart"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr "Aprel"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr "May"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr "Iyun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr "Iyul"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr "Avgust"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr "Sentyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr "Oktyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr "Noyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr "Dekabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr "yan"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr "fev"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr "mar"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr "apr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr "may"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr "iyn"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr "iyl"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr "avg"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr "sen"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr "okt"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr "noy"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr "dek"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Yan."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Fev."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mart"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aprel"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "May"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Iyun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Iyul"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Avg."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sen."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Okt."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Noy."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dek."
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr "Yanvar"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr "Fevral"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mart"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprel"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr "May"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr "Iyun"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr "Iyul"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr "Avgust"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr "Sentyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr "Oktyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "Noyabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr "Dekabr"
+
+#: venv/lib/python3.12/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr "Bu to‘g‘ri IPv6 manzili emas."
+
+#: venv/lib/python3.12/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+#: venv/lib/python3.12/site-packages/django/utils/text.py:287
+msgid "or"
+msgstr "yoki"
+
+#: venv/lib/python3.12/site-packages/django/utils/text.py:306
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ", "
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d yil"
+msgstr[1] "%(num)d yil"
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] "%(num)d oy"
+msgstr[1] "%(num)d oy"
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] "%(num)d hafta"
+msgstr[1] "%(num)d hafta"
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d kun"
+msgstr[1] "%(num)d kun"
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d soat"
+msgstr[1] "%(num)d soat"
+
+#: venv/lib/python3.12/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d daqiqa"
+msgstr[1] "%(num)d daqiqa"
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr "Taqiqlangan"
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr "CSRF tekshiruvi muvaffaqiyatsiz yakunlandi. So‘rov bekor qilindi."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Siz bu xabarni ko‘ryapsiz, chunki bu HTTPS sayti veb-brauzeringiz tomonidan “Referer sarlavhasi” yuborilishini talab qiladi, lekin hech qanday sarlavha yuborilmadi. Ushbu sarlavha xavfsizlik nuqtai nazaridan talab qilinadi, bu sizning brauzeringiz uchinchi shaxslar tomonidan o‘g‘irlanmaganligini ta’minlash uchun."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Agar siz brauzeringizda “Referer” sarlavhalarini o‘chirib qo‘ygan bo‘lsangiz, iltimos, ularni qayta yoqing, hech bo‘lmaganda ushbu sayt uchun, HTTPS ulanishlari uchun yoki “bir xil manba” so‘rovlari uchun."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+"Agar siz <meta name=\"referrer\" content=\"no-referrer\"> tegi yoki “Referrer-Policy: no-referrer” sarlavhasini ishlatsangiz, iltimos, ularni olib tashlang. CSRF himoyasi qat’iy referer tekshiruvi uchun “Referer” sarlavhasini talab qiladi. Agar siz maxfiylik haqida xavotirda bo‘lsangiz, uchinchi tomon saytlariga havolalar uchun <a rel=\"noreferrer\" …> kabi alternativalardan foydalaning."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Siz bu xabarni ko‘ryapsiz, chunki bu sayt formalarni yuborishda CSRF cookie-ni talab qiladi. Ushbu cookie xavfsizlik nuqtai nazaridan talab qilinadi, bu sizning brauzeringiz uchinchi shaxslar tomonidan o‘g‘irlanmaganligini ta’minlash uchun."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Agar siz brauzeringizda cookie-larni o‘chirib qo‘ygan bo‘lsangiz, iltimos, ularni qayta yoqing, hech bo‘lmaganda ushbu sayt uchun yoki “bir xil manba” so‘rovlari uchun."
+
+#: venv/lib/python3.12/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr "Qo'shimcha ma'lumotlar DEBUG=True sozlamasi bilan mavjud."
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr "Yil ko‘rsatilmagan"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr "Sana diapazondan tashqarida"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr "Oy ko‘rsatilmagan"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr "Kun ko‘rsatilmagan"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr "Hafta ko‘rsatilmagan"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "%(verbose_name_plural)s mavjud emas"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+"Kelajakdagi %(verbose_name_plural)s mavjud emas, chunki %(class_name)s.allow_future False."
+
+#: venv/lib/python3.12/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Noto‘g‘ri sana qatori “%(datestr)s”, berilgan format “%(format)s”"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "So‘rovga mos keladigan %(verbose_name)s topilmadi"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "Sahifa “oxirgi” emas va u butun songa aylantirilmaydi."
+
+#: venv/lib/python3.12/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Noto‘g‘ri sahifa (%(page_number)s): %(message)s"
+
+#: venv/lib/python3.12/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Bo‘sh ro‘yxat va “%(class_name)s.allow_empty” False."
+
+#: venv/lib/python3.12/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr "Bu yerda direktoriya indekslari ruxsat etilmaydi."
+
+#: venv/lib/python3.12/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” mavjud emas"
+
+#: venv/lib/python3.12/site-packages/django/views/static.py:68
+#: venv/lib/python3.12/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.12/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "%(directory)s indekslari"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "O‘rnatish muvaffaqiyatli yakunlandi! Tabriklaymiz!"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Django %(version)s uchun <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">reliz eslatmalari</a> ni ko‘ring"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+"Siz bu sahifani ko‘ryapsiz, chunki sozlamalar faylingizda <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> yoqilgan va siz hech qanday URL’ni sozlamagansiz."
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Django hujjatlari"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, & how-to’s"
+msgstr "Mavzular, ma’lumotnomalar va qo‘llanmalar"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Qo‘llanma: So‘rovnoma ilovasi"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Django bilan boshlash"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr "Django jamoasi"
+
+#: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Ulaning, yordam oling yoki hissa qo‘shing"

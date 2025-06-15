@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<!-- Auth Container -->
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-wallet"></i>
+            <span>{% trans "Login to Your Account" %}</span>
+        </h1>
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>{% trans "Error" %}:</strong> {% trans "Please enter a correct email and password." %}
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="username" class="form-label">{% trans "Username" %}</label>
+                <input type="username" id="username" name="username" class="form-control" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">{% trans "Password" %}</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" id="remember" name="remember" class="form-check-input">
+                <label for="remember" class="form-check-label">{% trans "Remember me" %}</label>
+            </div>
+
+            <div class="form-group">
+                <a href="{% url 'users:reset_password' %}" class="text-muted">{% trans "Forgot password?" %}</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Login" %}
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>{% blocktrans %}Don't have an account? {% endblocktrans %}<a href="{% url 'users:register' %}">{% trans "Register" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

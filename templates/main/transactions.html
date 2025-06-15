@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Transactions" %}{% endblock title %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <!-- Hisoblar ro'yxati -->
+            <div class="card mt-3" style="margin-bottom: 20px;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3 class="card-title">{% trans "Account Transactions" %}</h3>
+                    <a href="{% url 'main:new_account' %}" class="btn btn-primary btn-sm" style="text-decoration: none; color: white;">
+                        <i class="fas fa-plus"></i>
+                        {% trans "Add New Account" %}
+                    </a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Type" %}</th>
+                                <th>{% trans "Currency" %}</th>
+                                <th>{% trans "Amount" %}</th>
+                                <th>{% trans "Description" %}</th>
+                                <th>{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for account in accounts %}
+                            <tr>
+                                <td>{{ account.type }}</td>
+                                <td>{{ account.currency_type }}</td>
+                                <td>{{ account.amount }}</td>
+                                <td>{{ account.description }}</td>
+                                <td>
+                                    <a href="{% url 'main:update_account' account.id %}" title="{% trans 'Update' %}" style="margin-right: 10px; text-decoration: none;">
+                                        <i class="fa fa-edit action-icon text-primary"></i>
+                                    </a>
+                                    <a href="{% url 'main:delete_account' account.id %}" title="{% trans 'Delete' %}" style="text-decoration: none;">
+                                        <i class="fa fa-trash action-icon text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted">{% trans "No accounts found." %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h1 class="page-title">
+                <i class="fas fa-exchange-alt"></i>
+                <span class="en">{% trans "Transactions" %}</span>
+            </h1>
+
+            <!-- Filtrlar va qidiruv -->
+            <form method="get" id="filterForm">
+                {% with request.GET.filter as current_filter %}
+                <div class="filters">
+                    <button type="submit" name="filter" value="all"
+                            class="filter-btn {% if not current_filter or current_filter == 'all' %}active{% endif %}">
+                        <span class="en">{% trans "All" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="day"
+                            class="filter-btn {% if current_filter == 'day' %}active{% endif %}">
+                        <span class="en">{% trans "Today" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="week"
+                            class="filter-btn {% if current_filter == 'week' %}active{% endif %}">
+                        <span class="en">{% trans "This Week" %}</span>
+                    </button>
+                    <button type="submit" name="filter" value="month"
+                            class="filter-btn {% if current_filter == 'month' %}active{% endif %}">
+                        <span class="en">{% trans "This Month" %}</span>
+                    </button>
+                    <button type="button" class="filter-btn" onclick="toggleCustomRange()">
+                        <span class="en">{% trans "Custom Range" %}</span>
+                    </button>
+                </div>
+
+                <!-- Maxsus sana oralig'i -->
+                <div class="date-picker" id="customDateRange" style="display: none;">
+                    <div>
+                        <label for="startDate" class="en">{% trans "From" %}</label>
+                        <input type="date" name="start" id="startDate">
+                    </div>
+                    <div>
+                        <label for="endDate" class="en">{% trans "To" %}</label>
+                        <input type="date" name="end" id="endDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <span class="en">{% trans "Apply" %}</span>
+                    </button>
+                </div>
+                {% endwith %}
+            </form>
+
+            <script>
+                function toggleCustomRange() {
+                    document.getElementById('customDateRange').style.display = 'block';
+                }
+            </script>
+
+            <!-- Tranzaksiyalar jadvali -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title en">{% trans "All Transactions" %}</h3>
+                </div>
+                
+                <style>
+                    .bg-light-green { background-color: #c2ecce; }
+                    .bg-light-red { background-color: #fbeaea; }
+                    .text-success { color: #28a745; }
+                    .text-danger { color: #dc3545; }
+                    .action-icon { margin-right: 8px; font-size: 1.1em; }
+                </style>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Date" %}</th>
+                                <th>{% trans "Description" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Amount" %}</th>
+                                <th>{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for transaction in transactions %}
+                            <tr class="{% if transaction.type == 'Income' %}bg-light-green text-success{% elif transaction.type == 'Expense' %}bg-light-red text-danger{% endif %}">
+                                <td>{{ transaction.date|date:"d F Y" }}</td>
+                                <td>{{ transaction.description }}</td>
+                                <td>{{ transaction.category.name }}</td>
+                                <td>{{ transaction.amount }}</td>
+                                <td>
+                                    {% if transaction.type == 'Income' %}
+                                        <a href="{% url 'main:update_income' transaction.id %}" title="{% trans 'Update' %}" style="margin-right: 10px; text-decoration: none;">
+                                            <i class="fa fa-edit action-icon text-primary"></i>
+                                        </a>
+                                        <a href="{% url 'main:delete_income' transaction.id %}" title="{% trans 'Delete' %}">
+                                            <i class="fa fa-trash action-icon text-danger"></i>
+                                        </a>
+                                    {% elif transaction.type == 'Expense' %}
+                                        <a href="{% url 'main:update_expense' transaction.id %}" title="{% trans 'Update' %}" style="margin-right: 10px; text-decoration: none;">
+                                            <i class="fa fa-edit action-icon text-primary"></i>
+                                        </a>
+                                        <a href="{% url 'main:delete_expense' transaction.id %}" title="{% trans 'Delete' %}">
+                                            <i class="fa fa-trash action-icon text-danger"></i>
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load form_tags %}
+
+{% block title %}{% trans "Edit Income Category" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-edit"></i>
+            <span>{% trans "Edit Income Category" %}</span>
+        </h1>
+
+        <form method="POST" enctype="multipart/form-data" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.instance.icon %}
+                <div class="text-center mb-3">
+                    <i class="icon-preview" style="font-size: 40px;"></i>
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                {{ form.icon.label_tag }}
+                {{ form.icon|add_class:"form-control icon-select" }}
+                {% for error in form.icon.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name|add_class:"form-control" }}
+                {% for error in form.name.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Update" %}
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.querySelector('.icon-select');
+    const preview = document.createElement('div');
+    preview.className = 'icon-preview';
+    select.parentNode.insertBefore(preview, select.nextSibling);
+
+    function updatePreview() {
+      const selected = select.options[select.selectedIndex];
+      const iconClass = selected.value;
+      preview.innerHTML = `<i class="${iconClass}" style="font-size: 40px;"></i> ${selected.text}`;
+    }
+
+    select.addEventListener('change', updatePreview);
+    updatePreview();  // initial preview
+  });
+</script>
+{% endblock %}

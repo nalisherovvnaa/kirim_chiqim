@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load form_tags %}
+
+{% block title %}{% trans "Edit Expense Category" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">
+            <i class="fas fa-edit"></i>
+            <span>{% trans "Edit Expense Category" %}</span>
+        </h1>
+
+        <form method="POST" enctype="multipart/form-data" class="auth-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="id_icon">{% trans "Select Icon" %}</label>
+                <select id="id_icon" name="icon" class="form-control icon-select">
+                    {% for choice in form.icon.field.choices %}
+                        <option value="{{ choice.0 }}" {% if form.icon.value == choice.0 %}selected{% endif %}>
+                            <i class="{{ choice.0 }}" style="font-size: 20px;"></i> {{ choice.1 }}
+                        </option>
+                    {% endfor %}
+                </select>
+                {% for error in form.icon.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name|add_class:"form-control" }}
+                {% for error in form.name.errors %}
+                    <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                {% trans "Update" %}
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.querySelector('.icon-select');
+    const preview = document.createElement('div');
+    preview.className = 'icon-preview';
+    select.parentNode.insertBefore(preview, select.nextSibling);
+
+    function updatePreview() {
+      const selected = select.options[select.selectedIndex];
+      const iconClass = selected.value;
+      preview.innerHTML = `<i class="${iconClass}" style="font-size: 40px;"></i> ${selected.text}`;
+    }
+
+    select.addEventListener('change', updatePreview);
+    updatePreview();  // initial preview
+  });
+</script>
+{% endblock %}
