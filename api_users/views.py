@@ -300,21 +300,16 @@ import ssl
 def send_code(code, to_email):
     subject = 'Tasdiqlash kodi'
     message = f'Sizning tasdiqlash kodingiz: {code}'
-    from_email = 'nalisherovvna@gmail.com' 
+    from_email = settings.DEFAULT_FROM_EMAIL
 
-    # SSL context SSL tekshiruvlarsiz
-    ssl_context = ssl.create_default_context()
-    ssl_context.check_hostname = False
-    ssl_context.verify_mode = ssl.CERT_NONE
-
-    connection = get_connection(
-        host='smtp.yourserver.com', 
-        port=587,  
-        username='your_username',  
-        password='your_password',
-        use_tls=True,
+    send_mail(
+        subject,
+        message,
+        from_email,
+        [to_email],
         fail_silently=False,
     )
+
 
 
     email = EmailMessage(subject, message, from_email, [to_email], connection=connection)
