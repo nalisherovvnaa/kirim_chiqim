@@ -10,14 +10,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserRegistrationForm, ChangePasswordForm, ProfileUpdateForm, AvatarUpdateForm
 from .models import CustomUser, OTP
-from  main.models import Account, Income, Expense
 from main.models import Account, Income, Expense
 from django.contrib.auth import update_session_auth_hash
 from services import send_code
 import random
 import uuid
-
-# Create your views here.
 
 logger = logging.getLogger(__name__)
 
@@ -26,20 +23,11 @@ class SignUpView(View):
     def get(self, request):
         form = UserRegistrationForm()
         return render(request, 'users/register.html', {'form': form})
-    
 
     def post(self, request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             address = form.cleaned_data['address']
-            code = f"{random.randint(100000, 999999)}"
-            key = code[:3] + str(uuid.uuid4()) + code[3:]
-            OTP.objects.create(address=address, key=key)
-            send_code(code, address)
-
-            request.session['form_data'] = form.cleaned_data
-            request.session['reset_address'] = address
-            return redirect('users:verify_code')
 
             try:
                 code = f"{random.randint(100000, 999999)}"
@@ -81,7 +69,6 @@ class SignUpView(View):
                 return render(request, 'users/register.html', {'form': form})
 
         return render(request, 'users/register.html', {'form': form})
-
 
 
 class LoginView(View):

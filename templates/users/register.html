@@ -4,16 +4,15 @@
 {% block title %} {% trans "Register" %} {% endblock title %}
 
 {% block content %}
-<!-- Auth Container -->
-<div class="auth-container">
-<div class="auth-card">
-<h1 class="auth-title">
-<i class="fas fa-wallet"></i>
-<span class="en">{% trans "Create Account" %}</span>
-<span class="uz" style="display: none;">{% trans "Hisob yaratish" %}</span>
-<span class="ru" style="display: none;">{% trans "Создать аккаунт" %}</span>
-</h1>
-            
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1 class="auth-title">
+                <i class="fas fa-wallet"></i>
+                <span class="en">{% trans "Create Account" %}</span>
+                <span class="uz" style="display: none;">{% trans "Hisob yaratish" %}</span>
+                <span class="ru" style="display: none;">{% trans "Создать аккаунт" %}</span>
+            </h1>
 
             <!-- Django Messages Display -->
             {% if messages %}
@@ -42,13 +41,11 @@
                 </div>
             {% endif %}
 
-<form method="POST" class="auth-form">
-{% csrf_token %}
-                
+            <form method="POST" class="auth-form">
+                {% csrf_token %}
 
-<div class="form-group">
-<label for="username" class="form-label en">{% trans "Username" %}</label>
-                    <input type="text" id="username" name="username" class="form-control" required>
+                <div class="form-group">
+                    <label for="username" class="form-label en">{% trans "Username" %}</label>
                     <input type="text" id="username" name="username" class="form-control"
                            value="{{ form.username.value|default:'' }}" required>
                     {% if form.username.errors %}
@@ -58,12 +55,10 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-</div>
-                
+                </div>
 
-<div class="form-group">
-<label for="address" class="form-label en">{% trans "Address" %}</label>
-                    <input type="address" id="address" name="address" class="form-control" required>
+                <div class="form-group">
+                    <label for="address" class="form-label en">{% trans "Address" %}</label>
                     <input type="email" id="address" name="address" class="form-control"
                            value="{{ form.address.value|default:'' }}" required>
                     {% if form.address.errors %}
@@ -73,13 +68,12 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-</div>
-                
+                </div>
 
-<div class="form-group">
-<label for="password" class="form-label en">{% trans "Password" %}</label>
-<input type="password" id="password" name="password" class="form-control" required>
-<small class="text-muted en">{% trans "Minimum 8 characters" %}</small>
+                <div class="form-group">
+                    <label for="password" class="form-label en">{% trans "Password" %}</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <small class="text-muted en">{% trans "Minimum 8 characters" %}</small>
                     {% if form.password.errors %}
                         <div class="field-error">
                             {% for error in form.password.errors %}
@@ -87,12 +81,11 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-</div>
-                
+                </div>
 
-<div class="form-group">
-<label for="confirm_password" class="form-label en">{% trans "Confirm Password" %}</label>
-<input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+                <div class="form-group">
+                    <label for="confirm_password" class="form-label en">{% trans "Confirm Password" %}</label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
                     {% if form.confirm_password.errors %}
                         <div class="field-error">
                             {% for error in form.confirm_password.errors %}
@@ -100,14 +93,12 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-</div>
-                
+                </div>
 
-<div class="form-group form-check">
-                    <input type="checkbox" id="terms" name="terms" class="form-check-input" required>
+                <div class="form-group form-check">
                     <input type="checkbox" id="terms" name="terms" class="form-check-input"
                            {% if form.terms.value %}checked{% endif %} required>
-<label for="terms" class="form-check-label en">{% trans "I agree to the Terms & Conditions" %}</label>
+                    <label for="terms" class="form-check-label en">{% trans "I agree to the Terms & Conditions" %}</label>
                     {% if form.terms.errors %}
                         <div class="field-error">
                             {% for error in form.terms.errors %}
@@ -115,92 +106,81 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-</div>
-                
+                </div>
 
-<button type="submit" class="btn btn-primary btn-block">
-<span class="en">{% trans "Create Account" %}</span>
-</button>
-</form>
-            
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span class="en">{% trans "Create Account" %}</span>
+                </button>
+            </form>
 
-<div class="auth-footer">
-<p class="en">{% trans "Already have an account?" %} <a href="{% url 'users:login' %}">{% trans "Login" %}</a></p>
-</div>
-</div>
-</div>
+            <div class="auth-footer">
+                <p class="en">{% trans "Already have an account?" %} <a href="{% url 'users:login' %}">{% trans "Login" %}</a></p>
+            </div>
+        </div>
+    </div>
 
-<style>
-.auth-container {
-max-width: 500px;
-margin: 50px auto;
-padding: 0 15px;
-}
-        
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 0 15px;
+        }
 
-.auth-card {
-background-color: var(--card-bg);
-border-radius: 15px;
-box-shadow: var(--shadow);
-padding: 30px;
-transition: var(--transition);
-}
-        
+        .auth-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
 
-.auth-title {
-text-align: center;
-margin-bottom: 30px;
-font-size: 1.8rem;
-color: var(--primary);
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-}
-        
+        .auth-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-.auth-form {
-margin-top: 20px;
-}
-        
+        .auth-form {
+            margin-top: 20px;
+        }
 
-.auth-footer {
-text-align: center;
-margin-top: 20px;
-color: var(--text-muted);
-}
-        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-muted);
+        }
 
-.auth-footer a {
-color: var(--primary);
-text-decoration: none;
-}
-        
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-.form-check {
-display: flex;
-align-items: center;
-margin-bottom: 15px;
-}
-        
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-.form-check-input {
-margin-right: 10px;
-}
-        
+        .form-check-input {
+            margin-right: 10px;
+        }
 
-.form-check-label {
-margin-bottom: 0;
-font-size: 0.9rem;
-}
-        
+        .form-check-label {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
 
-.text-muted {
-color: var(--text-muted);
-font-size: 0.8rem;
-display: block;
-margin-top: 5px;
-}
+        .text-muted {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 5px;
+        }
 
         /* Messages Styles */
         .messages-container {
@@ -258,5 +238,5 @@ margin-top: 5px;
         .form-control.is-invalid {
             border-color: #dc3545;
         }
-</style>
+    </style>
 {% endblock content %}
