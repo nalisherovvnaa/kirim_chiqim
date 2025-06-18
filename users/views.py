@@ -17,7 +17,6 @@ from services import send_code
 import random
 import uuid
 
-# Create your views here.
 
 logger = logging.getLogger(__name__)
 
@@ -32,10 +31,6 @@ class SignUpView(View):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             address = form.cleaned_data['address']
-            code = f"{random.randint(100000, 999999)}"
-            key = code[:3] + str(uuid.uuid4()) + code[3:]
-            OTP.objects.create(address=address, key=key)
-            send_code(code, address)
 
             request.session['form_data'] = form.cleaned_data
             request.session['reset_address'] = address
