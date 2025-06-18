@@ -1,3 +1,8 @@
+import logging
+
+from django.contrib import messages
+from django.db import transaction
+
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.forms import AuthenticationForm
@@ -6,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import UserRegistrationForm, ChangePasswordForm, ProfileUpdateForm, AvatarUpdateForm
 from .models import CustomUser, OTP
 from  main.models import Account, Income, Expense
+from main.models import Account, Income, Expense
 from django.contrib.auth import update_session_auth_hash
 from services import send_code
 import random
@@ -13,11 +19,15 @@ import uuid
 
 # Create your views here.
 
+logger = logging.getLogger(__name__)
+
+
 class SignUpView(View):
     def get(self, request):
         form = UserRegistrationForm()
         return render(request, 'users/register.html', {'form': form})
     
+
     def post(self, request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -30,7 +40,48 @@ class SignUpView(View):
             request.session['form_data'] = form.cleaned_data
             request.session['reset_address'] = address
             return redirect('users:verify_code')
+
+            try:
+                code = f"{random.randint(100000, 999999)}"
+                key = code[:3] + str(uuid.uuid4()) + code[3:]
+
+                with transaction.atomic():
+                    otp_instance = OTP.objects.create(address=address, key=key)
+
+                    try:
+                        send_code(code, address)
+
+                        request.session['form_data'] = form.cleaned_data
+                        request.session['reset_address'] = address
+
+                        messages.success(
+                            request,
+                            f'Verification code has been sent to {address}. Please check your email.'
+                        )
+                        return redirect('users:verify_code')
+
+                    except Exception as email_error:
+                        logger.error(f"Failed to send verification email to {address}: {str(email_error)}")
+                        raise email_error
+
+            except Exception as e:
+                error_message = "An error occurred during registration. Please try again."
+
+                if "send_code" in str(e) or "email" in str(e).lower():
+                    error_message = "Failed to send verification email. Please check your email address and try again."
+                elif "database" in str(e).lower() or "connection" in str(e).lower():
+                    error_message = "Database error occurred. Please try again later."
+                elif "address" in str(e).lower() and "already exists" in str(e).lower():
+                    error_message = "An account with this email address already exists."
+
+                logger.error(f"SignUp error for address {address}: {str(e)}")
+
+                messages.error(request, error_message)
+
+                return render(request, 'users/register.html', {'form': form})
+
         return render(request, 'users/register.html', {'form': form})
+
 
 
 class LoginView(View):
