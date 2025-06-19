@@ -25,16 +25,11 @@ class SignUpView(View):
     def get(self, request):
         form = UserRegistrationForm()
         return render(request, 'users/register.html', {'form': form})
-    
 
     def post(self, request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             address = form.cleaned_data['address']
-
-            request.session['form_data'] = form.cleaned_data
-            request.session['reset_address'] = address
-            return redirect('users:verify_code')
 
             try:
                 code = f"{random.randint(100000, 999999)}"
